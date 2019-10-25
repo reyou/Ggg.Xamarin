@@ -1,15 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.271
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29418.71
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "intro.Android", "intro\intro.Android\intro.Android.csproj", "{265B6331-4329-46C6-8719-0411E6384487}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "intro1.Android", "intro\intro.Android\intro1.Android.csproj", "{265B6331-4329-46C6-8719-0411E6384487}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "intro.iOS", "intro\intro.iOS\intro.iOS.csproj", "{BB9C7FCC-99AB-4593-909C-54AB15687BFA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "intro1.iOS", "intro\intro.iOS\intro1.iOS.csproj", "{BB9C7FCC-99AB-4593-909C-54AB15687BFA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "intro.UWP", "intro\intro.UWP\intro.UWP.csproj", "{4DFDD086-0AB7-4589-A130-D5841ECA0B60}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "intro1.UWP", "intro\intro.UWP\intro1.UWP.csproj", "{4DFDD086-0AB7-4589-A130-D5841ECA0B60}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "intro", "intro\intro\intro.csproj", "{ECC4F927-CAD9-4DB3-8596-9C4E936A3E30}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "intro1", "intro\intro\intro1.csproj", "{ECC4F927-CAD9-4DB3-8596-9C4E936A3E30}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

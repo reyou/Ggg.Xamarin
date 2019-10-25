@@ -147,9 +147,9 @@
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="6.2.9" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\intro\intro.csproj">
-      <Project>{22984C0C-2351-4F7D-9DF5-DBE760873616}</Project>
-      <Name>intro</Name>
+    <ProjectReference Include="..\intro\intro1.csproj">
+      <Project>{ECC4F927-CAD9-4DB3-8596-9C4E936A3E30}</Project>
+      <Name>intro1</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
