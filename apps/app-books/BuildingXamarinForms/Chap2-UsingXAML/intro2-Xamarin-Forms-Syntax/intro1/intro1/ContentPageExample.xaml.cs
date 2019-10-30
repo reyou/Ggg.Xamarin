@@ -1,4 +1,6 @@
-﻿using Xamarin.Forms;
+﻿using System;
+using System.Threading.Tasks;
+using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace intro1
@@ -9,9 +11,21 @@ namespace intro1
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ContentPageExample : ContentPage
     {
+        [ContentProperty("Text")]
+        public class Label : View { }
         public ContentPageExample()
         {
             InitializeComponent();
         }
+
+        private async void OnButtonClicked(object sender, EventArgs e)
+        {
+            var b = sender as Button;
+            await Task.Delay(TimeSpan.FromSeconds(2));
+            b.Text = "It is so!";
+        }
     }
+
+
+
 }

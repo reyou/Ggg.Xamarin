@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="intro1.ContentPageExample">
+    <ContentPage.Content>
+        <ScrollView>
+            <!--HeightRequest: Gets or sets the desired height override of this element.-->
+            <StackLayout HeightRequest="1500">
+                <!--A common approach to assign values to object properties is to use XML element tags
+                instead of an attribute using the class.-->
+                <Label>
+                    <Label.Text>Hello</Label.Text>
+                </Label>
+                <!--ContentProperty indicates that the property can be omitted when using the
+                property element syntax, which is referred to as content property syntax.-->
+                <Label>Hello</Label>
+                <!--Many classes in Xamarin.Forms use enumerations to restrict the values a member can
+                be assigned to.-->
+                <Button FontSize="Medium" Text="Medium Size Button"></Button>
+                <Button FontAttributes="Italic,Bold" Text="Italic Bold Button" />
+                <Button Text="Make It So" Clicked="OnButtonClicked" />
+                <!--Using Collection Syntax to Add Child Elements to a Container-->
+                <StackLayout Padding="30,30">
+                    <Label/>
+                    <Button/>
+                    <Grid/>
+                </StackLayout>
+                <!--Attached Property Syntax-->
+                <Grid BackgroundColor="BurlyWood">
+                    <Label Grid.Row="1" Grid.Column="1" Text="Cell (1,1)" />
+                </Grid>
+            </StackLayout>
+        </ScrollView>
+
+    </ContentPage.Content>
+</ContentPage>

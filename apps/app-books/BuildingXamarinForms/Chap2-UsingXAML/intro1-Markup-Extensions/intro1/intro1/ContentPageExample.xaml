@@ -3,9 +3,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:system="clr-namespace:System;assembly=netstandard"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
              mc:Ignorable="d"
              x:Class="intro1.ContentPageExample">
+    <ContentPage.Resources>
+        <!--Use the Array markup extension to define arrays with objects of a specific Type.-->
+        <x:Array Type="{x:Type sys:String}" x:Key="array">
+            <sys:String>Hello</sys:String>
+            <sys:String>World</sys:String>
+        </x:Array>
+    </ContentPage.Resources>
     <ContentPage.Padding>
         <OnPlatform x:TypeArguments="Thickness">
             <On Platform="iOS" Value="10, 20, 10, 5"/>
@@ -16,43 +23,62 @@
         <ScrollView>
             <!--HeightRequest: Gets or sets the desired height override of this element.-->
             <StackLayout HeightRequest="1500">
-                <!--Gets or sets the Xamarin.Forms.LayoutOptions that define how the element gets laid in a layout cycle. This is a bindable property.-->
-                <Label Text="Label" FontSize="40" HorizontalOptions="Center" />
-                <Label FontSize="20" FontAttributes="Italic, Bold" HorizontalOptions="CenterAndExpand">
-                    <Label.Text>
-                        This control is great for
-                    displaying one or more
-                    lines of text.
-                    </Label.Text>
-                    <Label.FontFamily>
-                        <OnPlatform x:TypeArguments="system:String">
-                            <On Platform="iOS" Value="Courier"></On>
-                            <On Platform="Android" Value="Droid Sans Mono"></On>
-                        </OnPlatform>
-                    </Label.FontFamily>
+                <!--Adding External Class Libraries-->
+                <!--demonstrates how to use the .NET System library
+                in the assembly mscorlib.dll in XAML in order to use 
+                System.String to assign a string literal to a Label.-->
+                <Label>
+                    <sys:String>Hello System.String</sys:String>
                 </Label>
-                <!--Fill: A Xamarin.Forms.LayoutOptions stucture that describes an element that has no padding around itself and does not expand.-->
-                <!--Center: A Xamarin.Forms.LayoutOptions structure that describes an element that is centered and does not expand.-->
-                <Button Text="Make It So" FontSize="Large" HorizontalOptions="Center"
-                    VerticalOptions="Fill" Clicked="ButtonClicked" />
-                <!--The following code creates a text box for user entry of a single line of text. Entry inherits
-            from the InputView class, a derivative of the View class.-->
-                <Entry Placeholder="Username" VerticalOptions="Center" Keyboard="Text" />
-                <!--The BoxView control creates a colored graphical rectangle, useful as a placeholder that
-            can be later replaced by an image or other more complex control or group of controls.
-            This control is useful when you’re waiting on the designer to get his/her act together.-->
-                <!--Gets or sets the desired width override of this element.-->
-                <BoxView Color="Silver" WidthRequest="150" HeightRequest="150"
-                     HorizontalOptions="StartAndExpand" VerticalOptions="Fill" />
-                <!--The Image view holds an image for display on your page from a local or online file:-->
-                <!--Aspect: Gets or sets the scaling mode for the image. This is a bindable property.-->
-                <Image Source="monkey.png" Aspect="AspectFit" HorizontalOptions="End"  
-                   VerticalOptions="Fill" WidthRequest="200">
-                    <Image.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="ImageTapped"></TapGestureRecognizer>
-                    </Image.GestureRecognizers>
-                </Image>
-
+                <!--The Static markup extension is used to access static fields, properties, and constant fields
+                as well as enumeration members.-->
+                <BoxView Color="{x:Static Color.Maroon}" WidthRequest="150" HeightRequest="150"/>
+                <!--Markup Extensions Using Element Syntax-->
+                <BoxView WidthRequest="150" HeightRequest="150">
+                    <BoxView.Color>
+                        <x:Static>Color.Lime</x:Static>
+                    </BoxView.Color>
+                </BoxView>
+                <!--Use a Picker view to create a drop-down list, by assigning an Array to the
+                Picker's ItemsSource, like this:-->
+                <Picker>
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type sys:String}" x:Key="array">
+                            <sys:String>Hello</sys:String>
+                            <sys:String>World</sys:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+                <!--The Reference markup extension is used in combination with the Name directive to
+                reference an object previously declared in the XAML.-->
+                <Label x:Name="MyLabel" Text="Hello Entry" />
+                <!-- Binding: A single 1:1 immutable data binding.-->
+                <Entry Text="{Binding Path=Text, Source={x:Reference MyLabel}}" />
+                <!--Utilizing Constructors and Passing in Parameters Using x:Arguments-->
+                <BoxView>
+                    <BoxView.Color>
+                        <Color>
+                            <x:Arguments>
+                                <x:Double>0.25</x:Double>
+                                <x:Double>0.75</x:Double>
+                                <x:Double>0.2</x:Double>
+                                <x:Double>0.9</x:Double>
+                            </x:Arguments>
+                        </Color>
+                    </BoxView.Color>
+                </BoxView>
+                <!--Constructing Objects Using Factory Methods-->
+                <BoxView>
+                    <BoxView.Color>
+                        <Color x:FactoryMethod="FromHex">
+                            <x:Arguments>
+                                <x:String>#02dd52</x:String>
+                            </x:Arguments>
+                        </Color>
+                    </BoxView.Color>
+                </BoxView>
+                <!--A Xamarin.Forms.View that allows date picking.-->
+                <DatePicker />
             </StackLayout>
         </ScrollView>
 
