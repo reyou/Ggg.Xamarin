@@ -8,38 +8,16 @@
              Padding="10,10,10,5">
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout>
-                <!--intro1-StackLayout-->
-                <StackLayout Spacing="0">
-                    <Label Text="Start is flush left" HorizontalOptions="Start" />
-                    <Label Text="Center" HorizontalOptions="Center" />
-                    <Label Text="End is flush right" HorizontalOptions="End" />
-                </StackLayout>
-                <!--intro2-Stacking with Vertical Orientation-->
-                <StackLayout Spacing="0" Orientation="Vertical" VerticalOptions="FillAndExpand">
-                    <Label Text="Start is flush left" HorizontalOptions="Start" />
-                    <Label Text="Start 2" HorizontalOptions="Start" />
-                    <Label Text="Center" HorizontalOptions="Center" />
-                    <Label Text="Center 2" HorizontalOptions="Center" />
-                    <Label Text="End 1" HorizontalOptions="End" />
-                    <Label Text="End is flush right" HorizontalOptions="End" />
-                    <!--intro3-Stacking with Horizontal Orientation-->
-                    <StackLayout Spacing="0" Orientation="Horizontal">
-                        <Label Text="Start------" />
-                        <Label Text="------Center------" HorizontalOptions="CenterAndExpand" />
-                        <Label Text="------End" />
-                    </StackLayout>
-                    <!--intro4-Six views stacked left to right-->
-                    <StackLayout Spacing="0" Orientation="Horizontal">
-                        <Label Text="Start 1 ---" />
-                        <Label Text="Start 2 ---" />
-                        <Label Text="---Center 1 ---" HorizontalOptions="CenterAndExpand" />
-                        <Label Text="---Center 2 ---" HorizontalOptions="CenterAndExpand" />
-                        <Label Text="---End 1 " />
-                        <Label Text="---End 2 " />
-                    </StackLayout>
-                </StackLayout>
-            </StackLayout>
+            <!--intro1-Use FlexLayout for stacking or wrapping a collection of child views.-->
+            <!--Direction="Column" AlignItems="Center" JustifyContent="SpaceEvenly"-->
+            <!--Direction="Row" AlignItems="Center" JustifyContent="Start"-->
+            <!--Direction="Row" AlignItems="Start" JustifyContent="Start"-->
+            <!--override AlignItems for a single View using FlexLayout.AlignSelf.-->
+            <FlexLayout Direction="Row" AlignItems="Start" JustifyContent="Start">
+                <Button Text="First" />
+                <Button Text="Second" />
+                <Button Text="Third" />
+            </FlexLayout>
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>
