@@ -6,8 +6,10 @@
              mc:Ignorable="d"
              x:Class="intro1.ContentPageExample" 
              Padding="10,10,10,5">
-    <AbsoluteLayout VerticalOptions="FillAndExpand" BackgroundColor="Beige">
-        <Label Text="FirstLabel" BackgroundColor="Aqua" AbsoluteLayout.LayoutBounds="0, 0, AutoSize, AutoSize" AbsoluteLayout.LayoutFlags="PositionProportional" />
-        <Label Text="SecondLabel" BackgroundColor="CadetBlue" AbsoluteLayout.LayoutBounds="0, 1, AutoSize, AutoSize" AbsoluteLayout.LayoutFlags="PositionProportional" />
+    <AbsoluteLayout VerticalOptions="FillAndExpand">
+        <Label Text="FirstLabel" BackgroundColor="Chartreuse" AbsoluteLayout.LayoutBounds="0, 0, AutoSize, AutoSize" AbsoluteLayout.LayoutFlags="PositionProportional" />
+        <Label Text="SecondLabel" BackgroundColor="CornflowerBlue" AbsoluteLayout.LayoutBounds="0, 1, AutoSize, AutoSize" AbsoluteLayout.LayoutFlags="PositionProportional" />
+        <Label Text="PointLabel" BackgroundColor="ForestGreen" AbsoluteLayout.LayoutBounds="0, 1" AbsoluteLayout.LayoutFlags="PositionProportional" />
     </AbsoluteLayout>
 </ContentPage>
+
